@@ -1,0 +1,78 @@
+name: Purevent2HA
+version: "1.0.0"
+slug: purevent2ha
+description: "Intégration EnOcean pour VMI Purevent - Recevoir et envoyer des commandes"
+url: "https://github.com/ricolaflo88/Purevent2HA"
+codeowners:
+  - "@ricolaflo88"
+startup: services
+boot: auto
+arch:
+  - armhf
+  - armv7
+  - aarch64
+  - amd64
+  - i386
+image: "ghcr.io/ricolaflo88/purevent2ha-{arch}"
+ports:
+  6720/tcp: 6720
+  5000/tcp: 5000
+devices:
+  - /dev/ttyUSB0:/dev/ttyUSB0
+  - /dev/ttyUSB1:/dev/ttyUSB1
+  - /dev/ttyAMA0:/dev/ttyAMA0
+privileged:
+  - NET_ADMIN
+  - SYS_ADMIN
+options:
+  port: /dev/ttyUSB0
+  log_level: info
+schema:
+  port:
+    type: string
+    description: "Port série pour le module EnOcean (ex: /dev/ttyUSB0)"
+    default: /dev/ttyUSB0
+  log_level:
+    type: string
+    description: "Niveau de journalisation"
+    enum:
+      - debug
+      - info
+      - warning
+      - error
+    default: info
+  max_retry:
+    type: integer
+    description: "Nombre de tentatives maximum"
+    default: 3
+  timeout:
+    type: integer
+    description: "Timeout en secondes"
+    default: 30
+  baudrate:
+    type: integer
+    description: "Vitesse de la liaison série"
+    default: 57600
+  enabled_devices:
+    type: object
+    description: "Appareils activés"
+    schema:
+      purevent_vmi:
+        type: boolean
+        description: "VMI Purevent (D1079-01-00)"
+        default: true
+      co2_sensor:
+        type: boolean
+        description: "Capteur CO2 (A5-09-04)"
+        default: true
+      temp_humidity_sensor:
+        type: boolean
+        description: "Capteur Température/Humidité (A5-04-01)"
+        default: true
+      ventilairsec_assistant:
+        type: boolean
+        description: "Assistant Ventilairsec (D1079-00-00)"
+        default: true
+homeassistant:
+  api: true
+  config_validation: true

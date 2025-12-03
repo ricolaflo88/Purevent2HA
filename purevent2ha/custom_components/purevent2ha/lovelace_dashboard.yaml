@@ -1,0 +1,81 @@
+"""HomeAssistant UI configuration"""
+
+type: custom:vertical-stack-in-card
+cards:
+  - type: heading
+    heading: VMI Purevent
+    heading_tag: h1
+
+  - type: entities
+    title: "État général"
+    entities:
+      - entity: sensor.purevent_status
+        name: État
+      - entity: sensor.purevent_temperature
+        name: Température
+      - entity: sensor.purevent_humidity
+        name: Humidité
+      - entity: sensor.purevent_co2
+        name: CO2
+
+  - type: entities
+    title: "Contrôle"
+    entities:
+      - entity: switch.purevent_power
+        name: Alimentation
+      - entity: switch.purevent_heating
+        name: Chauffage
+      - entity: switch.purevent_cooling
+        name: Refroidissement
+      - entity: switch.purevent_intake
+        name: Insufflation d'air
+
+  - type: gauge
+    entity: sensor.purevent_humidity
+    min: 0
+    max: 100
+    name: Humidité relative
+    segments:
+      - from: 0
+        color: "#1a6dd8"
+      - from: 30
+        color: "#4caf50"
+      - from: 70
+        color: "#ff9800"
+      - from: 85
+        color: "#f44336"
+
+  - type: gauge
+    entity: sensor.purevent_co2
+    min: 0
+    max: 2000
+    name: Concentration CO2
+    segments:
+      - from: 0
+        color: "#4caf50"
+      - from: 800
+        color: "#ff9800"
+      - from: 1200
+        color: "#f44336"
+
+  - type: entities
+    title: "Maintenance"
+    entities:
+      - entity: sensor.purevent_filter_state
+        name: État du filtre
+      - entity: number.purevent_fan_speed
+        name: Vitesse du ventilateur
+
+  - type: custom:history-stats
+    title: "Utilisation du chauffage"
+    entities:
+      - switch.purevent_heating
+    stat_period_duration: "24:00:00"
+    chart_type: bar
+
+  - type: custom:history-stats
+    title: "Utilisation du refroidissement"
+    entities:
+      - switch.purevent_cooling
+    stat_period_duration: "24:00:00"
+    chart_type: bar

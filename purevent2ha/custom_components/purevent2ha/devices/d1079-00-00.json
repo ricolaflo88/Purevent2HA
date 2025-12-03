@@ -1,0 +1,22 @@
+{
+  "device_type": "D1079-00-00",
+  "name": "Assistant Ventilairsec",
+  "manufacturer": "Purevent",
+  "rorg": "0xD1",
+  "func": "0x07",
+  "type": "0x08",
+  "description": "Module assistant Ventilairsec",
+  "sensors": [
+    {
+      "id": "status",
+      "name": "État",
+      "type": "string"
+    },
+    {
+      "id": "signal_strength",
+      "name": "Force du signal",
+      "type": "integer",
+      "unit": "dBm"
+    }
+  ]
+}

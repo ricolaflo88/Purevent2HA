@@ -1,0 +1,8 @@
+homeassistant>=2024.1.0
+purevent2ha[integration]>=1.0.0
+python-enocean>=0.60.1
+pyserial>=3.5
+aiohttp>=3.8.0
+aiofiles>=23.0.0
+ruamel.yaml>=0.17.21
+voluptuous>=0.13.1

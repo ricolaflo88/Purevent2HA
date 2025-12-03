@@ -1,0 +1,27 @@
+{
+  "device_type": "A5-04-01",
+  "name": "Capteur Température/Humidité",
+  "manufacturer": "EnOcean",
+  "rorg": "0xA5",
+  "func": "0x04",
+  "type": "0x01",
+  "description": "Capteur température et humidité relative",
+  "sensors": [
+    {
+      "id": "temperature",
+      "name": "Température",
+      "type": "temperature",
+      "unit": "°C",
+      "min": -30,
+      "max": 60
+    },
+    {
+      "id": "humidity",
+      "name": "Humidité relative",
+      "type": "humidity",
+      "unit": "%",
+      "min": 0,
+      "max": 100
+    }
+  ]
+}

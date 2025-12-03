@@ -1,0 +1,36 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Configuration de Purevent2HA",
+        "description": "Configurez votre module EnOcean pour la VMI Purevent",
+        "data": {
+          "port": "Port série",
+          "baudrate": "Baudrate",
+          "timeout": "Timeout (secondes)",
+          "max_retry": "Nombre maximum de tentatives",
+          "log_level": "Niveau de journalisation",
+          "name": "Nom de l'appareil"
+        }
+      }
+    },
+    "abort": {
+      "already_configured": "Ce périphérique est déjà configuré"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Options Purevent2HA",
+        "description": "Modifiez les paramètres de Purevent2HA",
+        "data": {
+          "port": "Port série",
+          "baudrate": "Baudrate",
+          "timeout": "Timeout (secondes)",
+          "max_retry": "Nombre maximum de tentatives",
+          "log_level": "Niveau de journalisation"
+        }
+      }
+    }
+  }
+}

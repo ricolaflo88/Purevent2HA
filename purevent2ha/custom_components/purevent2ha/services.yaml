@@ -1,0 +1,20 @@
+{
+  "send_command": {
+    "name": "Send Command",
+    "description": "Send a command to a Purevent device",
+    "fields": {
+      "device_id": {
+        "name": "Device ID",
+        "description": "The ID of the device"
+      },
+      "command": {
+        "name": "Command",
+        "description": "The command to send"
+      },
+      "parameters": {
+        "name": "Parameters",
+        "description": "Optional command parameters"
+      }
+    }
+  }
+}

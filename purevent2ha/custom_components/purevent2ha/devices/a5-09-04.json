@@ -1,0 +1,27 @@
+{
+  "device_type": "A5-09-04",
+  "name": "Capteur CO2",
+  "manufacturer": "EnOcean",
+  "rorg": "0xA5",
+  "func": "0x09",
+  "type": "0x04",
+  "description": "Capteur de dioxyde de carbone",
+  "sensors": [
+    {
+      "id": "co2",
+      "name": "CO2",
+      "type": "co2",
+      "unit": "ppm",
+      "min": 0,
+      "max": 2500
+    },
+    {
+      "id": "temperature",
+      "name": "Température",
+      "type": "temperature",
+      "unit": "°C",
+      "min": -30,
+      "max": 60
+    }
+  ]
+}

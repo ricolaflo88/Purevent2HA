@@ -1,0 +1,10 @@
+{
+    "domain": "purevent2ha",
+    "name": "Purevent2HA",
+    "codeowners": ["@ricolaflo88"],
+    "config_flow": true,
+    "documentation": "https://github.com/ricolaflo88/Purevent2HA",
+    "requirements": ["python-enocean>=0.60.1", "pyserial>=3.5"],
+    "version": "1.0.0",
+    "homeassistant": "2024.1.0"
+}

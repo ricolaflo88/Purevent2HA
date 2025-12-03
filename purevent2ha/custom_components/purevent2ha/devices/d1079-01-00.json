@@ -1,0 +1,87 @@
+{
+  "device_type": "D1079-01-00",
+  "name": "VMI Purevent",
+  "manufacturer": "Purevent",
+  "rorg": "0xD1",
+  "func": "0x07",
+  "type": "0x09",
+  "description": "Ventilation Mécanique par Insufflation Purevent",
+  "sensors": [
+    {
+      "id": "temperature",
+      "name": "Température",
+      "type": "temperature",
+      "unit": "°C",
+      "min": -20,
+      "max": 60
+    },
+    {
+      "id": "humidity",
+      "name": "Humidité",
+      "type": "humidity",
+      "unit": "%",
+      "min": 0,
+      "max": 100
+    },
+    {
+      "id": "co2",
+      "name": "CO2",
+      "type": "co2",
+      "unit": "ppm",
+      "min": 0,
+      "max": 5000
+    },
+    {
+      "id": "status",
+      "name": "État",
+      "type": "string"
+    },
+    {
+      "id": "filter_state",
+      "name": "État du filtre",
+      "type": "string"
+    },
+    {
+      "id": "power",
+      "name": "Alimentation",
+      "type": "boolean"
+    },
+    {
+      "id": "heating",
+      "name": "Chauffage",
+      "type": "boolean"
+    },
+    {
+      "id": "cooling",
+      "name": "Refroidissement",
+      "type": "boolean"
+    }
+  ],
+  "commands": [
+    {
+      "id": "POWER",
+      "name": "Power On/Off",
+      "parameter": "boolean"
+    },
+    {
+      "id": "HEATING",
+      "name": "Enable/Disable Heating",
+      "parameter": "boolean"
+    },
+    {
+      "id": "COOLING",
+      "name": "Enable/Disable Cooling",
+      "parameter": "boolean"
+    },
+    {
+      "id": "SET_TEMP",
+      "name": "Set Target Temperature",
+      "parameter": "float"
+    },
+    {
+      "id": "SET_FAN_SPEED",
+      "name": "Set Fan Speed",
+      "parameter": "integer"
+    }
+  ]
+}

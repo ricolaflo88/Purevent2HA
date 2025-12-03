@@ -1,0 +1,39 @@
+name: Build Addon
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "purevent2ha/**"
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v2
+      
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+      
+      - name: Build addon
+        uses: docker/build-push-action@v4
+        with:
+          context: ./purevent2ha
+          file: ./purevent2ha/Dockerfile
+          push: false
+          platforms: |
+            linux/amd64
+            linux/arm/v7
+            linux/arm64
+          tags: |
+            ghcr.io/ricolaflo88/purevent2ha:latest
+            ghcr.io/ricolaflo88/purevent2ha:1.0.0
