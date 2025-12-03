@@ -1,0 +1,17 @@
+{
+  "name": "Purevent2HA",
+  "url": "https://github.com/ricolaflo88/Purevent2HA",
+  "maintainer": "ricolaflo88",
+  "version": "1.0.0",
+  "homeassistant": "2024.1.0",
+  "repository": "https://github.com/ricolaflo88/Purevent2HA",
+  "issues": "https://github.com/ricolaflo88/Purevent2HA/issues",
+  "category": "integration",
+  "arch": [
+    "armhf",
+    "armv7",
+    "aarch64",
+    "amd64",
+    "i386"
+  ]
+}
